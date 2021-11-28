@@ -27,7 +27,7 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
     
-@app.route("/teste.html",methods=['GET','POST'])
+@app.route("teste.html",methods=['GET','POST'])
 def vereadores():
     #self.nome = self.listarnomes()
     conn = get_db_connection()
