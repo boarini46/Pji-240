@@ -27,7 +27,7 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
     
-@app.route("/teste.html",methods=['GET','POST'])
+@app.route("/index.html",methods=['GET','POST'])
 def vereadores():
     #self.nome = self.listarnomes()
     conn = get_db_connection()
@@ -35,7 +35,7 @@ def vereadores():
                         inner join part_vereadores p on n.IdVereador = p.IdVereador\
                         inner join contato_vereadores c on n.IdVereador = c.IdVereador').fetchall()
     conn.close()
-    return render_template('teste.html',vereador=posts)
+    return render_template('index.html',vereador=posts)
 
 @app.route("/materias.html",methods=['GET','POST'])
 def materias():
