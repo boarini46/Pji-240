@@ -35,9 +35,9 @@ def vereadores():
                         inner join part_vereadores p on n.IdVereador = p.IdVereador\
                         inner join contato_vereadores c on n.IdVereador = c.IdVereador').fetchall()
     conn.close()
-    return render_template('teste.html',vereador=posts)
+    return render_template('/new/teste.html',vereador=posts)
 
-@app.route("/materias.html",methods=['GET','POST'])
+@app.route("/new/materias.html",methods=['GET','POST'])
 def materias():
     #self.nome = self.listarnomes()
     conn = get_db_connection()
