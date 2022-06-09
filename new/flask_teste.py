@@ -12,7 +12,7 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
     
-@app.route("/")
+@app.route("/") 
 def hello_world():
     #self.nome = self.listarnomes()
     conn = get_db_connection()
