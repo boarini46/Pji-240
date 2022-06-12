@@ -9,7 +9,7 @@ __email__ = "pji110-2021grupo5@gmail.com"
 __status__ = "Production"
 
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome import options,service
 from selenium.webdriver.common.by import By
 from time import sleep
 import sqlite3
@@ -22,8 +22,10 @@ class materias:
         options = webdriver.ChromeOptions()
         options.add_argument("--headless")
 
-        self.service      = Service(executable_path="/Área de Trabalho/Estudos do Papai/2021/Projeto Integrador I")
-        self.driver       = webdriver.Chrome(service=self.service)#webdriver.Chrome(chrome_options=options) #webdriver.Chrome()
+        #self.service      = service("/Área de Trabalho/Estudos do Papai/PJI240  -  Projeto  Integrador II")
+        self.driver       = webdriver.Chrome(chrome_options=options) #webdriver.Chrome(service=self.service)
+        #webdriver.Chrome(chrome_options=options) 
+        #webdriver.Chrome()
         self.driver.implicitly_wait(5)
         self.titulo       = []
         self.texto_materia= []
